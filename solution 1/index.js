@@ -1,13 +1,16 @@
-const fs = require('fs');
+const fs = require("fs");
 
-const STRING = 3
-const str1 = "bom dia grupo choris na area"
-const str2 = 'choris'
+const str1 = fs.readFileSync('../texts/string3').toString()
+const str2 = "messer"
 
 let count = 0
+const index = substrIndex(str1, str2)
+console.log('index: ' + index + '\n')
+console.log('String length: ' + str1.length)
+console.log('Pattern length: ' + str2.length)
+console.log('count: ' + count)
 
 function substrIndex(str1, str2) {
-    console.log(`str1 length: ${str1.length}`)
     let j = 0
 
     for (let i = 0; i < str1.length; i++) {
@@ -28,9 +31,3 @@ function substrIndex(str1, str2) {
 
     return -1
 }
-
-const index = substrIndex(str1, str2)
-console.log(`index: ${index}, count: ${count}`)
-
-//Qual a complexidade, no pior caso? str1.length() * str2.length()
-
